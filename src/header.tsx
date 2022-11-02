@@ -1,6 +1,6 @@
 import React from "react";
 
-const Header = () => {
+const Header: React.FC = () => {
   return (
     <header id="header" className="fixed-top">
       <div className="container d-flex align-items-center justify-content-between">
@@ -44,7 +44,7 @@ const Header = () => {
               </a>
             </li>
           </ul>
-          <i className="bi bi-list mobile-nav-toggle"></i>
+          <i className="bi bi-list mobile-nav-toggle" />
         </nav>
         {/* <!-- .navbar --> */}
       </div>

@@ -1,0 +1,34 @@
+# for prod env
+[[redirects]]
+  from = "/approve-design/*" 
+  to = "https://boxup.com/approve-design/:splat"
+  status = 200
+  conditions = {Cookie = ["is_prod"]}
+
+# for stage env
+[[redirects]]
+  from = "/approve-design/*" 
+  to = "https://vigorous-newton-076a87.netlify.app/approve-design/:splat"
+  status = 200
+  conditions = {Cookie = ["is_stage"]}
+
+# for dev env and unique urls's
+[[redirects]]
+  from = "/approve-design/*" 
+  to = "https://dreamy-ride-4321e2.netlify.app/approve-design/:splat"
+  status = 200
+  conditions = {Cookie = ["is_dev"]}
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+
+[build]
+  command = "npm run build" # the command you run to build this file
+  publish = "build"
+[build.environment]
+  NODE_VERSION = "16.11.1"
+  NPM_VERSION = "8.0.0"
+  NETLIFY_BUILD_DEBUG = "true"
